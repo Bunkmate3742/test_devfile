@@ -7,5 +7,5 @@ metadata:
 components:
   - name: test-container
     container:
-      image: quay.io/rh_ee_andsmith/container_test:v1
+      image: quay.io/rh_ee_andsmith/container_build_test:v1
       memoryLimit: 1024Mi
