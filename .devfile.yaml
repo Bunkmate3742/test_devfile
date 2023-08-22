@@ -1,0 +1,11 @@
+schemaVersion: 2.0.0
+metadata:
+  name: devspaces-container-build.v1
+  version: 1.0.0
+  attributes:
+    controller.devfile.io/scc: container-build
+components:
+  - name: test-container
+    container:
+      image: quay.io/rh_ee_andsmith/container_test:v1
+      memoryLimit: 1024Mi
