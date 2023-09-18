@@ -35,7 +35,3 @@ components:
       cpuLimit: '2'
       cpuRequest: '1'
       mountSources: true
-
-  - name: jupyter
-    plugin:
-      id: Jupyter
