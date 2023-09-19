@@ -1,6 +1,8 @@
- {
+{
     "recommendations": [
-      "ms-toolsai.jupyter",
-      "vscodevim.vim"
+        "ms-python.python",
+        "redhat.ansible",
+        "redhat.vscode-openshift-connector",
+        "ms-python.black-formatter"
     ]
-  }
+}
