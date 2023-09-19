@@ -1,11 +1,37 @@
-schemaVersion: 2.0.0
+schemaVersion: 2.1.0
 metadata:
-  name: devspaces-container-build.v1
-  version: 1.0.0
-  attributes:
-    controller.devfile.io/scc: container-build
+  name: LnL Test
+projects:
+  - name: python-example
+    git:
+      remotes:
+        origin: https://github.com/redhat-developer/app-services-sdk-core.git
+
+  - name: nodejs-example
+    git:
+      remotes:
+        origin: https://github.com/redhat-developer/devfile-sample.git
 components:
-  - name: test-container
+  - name: python
     container:
-      image: quay.io/rh_ee_andsmith/container_build_test:v1
-      memoryLimit: 1024Mi
+      image: registry.redhat.io/devspaces/udi-rhel8:3.8
+      volumeMounts:
+        - name: venv
+          path: /home/user/.venv
+      memoryLimit: '2Gi'
+      memoryRequest: '1Gi'
+      cpuLimit: '2'
+      cpuRequest: '1'
+      mountSources: true
+  - name: venv
+    volume:
+      size: 1G
+
+  - name: nodejs
+    container:
+      image: registry.redhat.io/devspaces/udi-rhel8:3.8
+      memoryLimit: '2Gi'
+      memoryRequest: '1Gi'
+      cpuLimit: '2'
+      cpuRequest: '1'
+      mountSources: true
